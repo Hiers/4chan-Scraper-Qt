@@ -9,7 +9,7 @@ Challenge project taken by rolling dice and doing what the dice told us to do. I
 
 ## Installation
 ### Dependencies
-This program needs Qt5.15, tidyxml and tinyxml2 to compile and run.
+This program needs Qt5.15, libcurl, tidyxml and tinyxml2 to compile and run.
 
 ### Install
 Clone the repository and run in the directory the commands
