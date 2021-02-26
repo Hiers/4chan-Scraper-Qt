@@ -16,6 +16,7 @@ void Scraper::curlImage(char *URL){
 
     curl->curl_setup(URL);
     //the magic command that runs curl
+    curl->buffer.clear();
     if(curl_easy_perform(curl->get) == CURLE_OK){
         xml->htmltoxml(curl->buffer);
         if(xml->parsexml(curl))//this curls again to get the image

@@ -71,7 +71,6 @@ int Xml::parsexml(Curl *curl){
     if(!std::sscanf(doc.FirstChildElement("html")->FirstChildElement("body")->Attribute("class"), "is_thread%9s", check))
         return -1;
     
-    
     //Location of original post in the html file
     const tinyxml2::XMLElement*  op = doc.FirstChildElement("html")->FirstChildElement("body")->FirstChildElement("form")
         ->NextSiblingElement("form")->FirstChildElement("div")->FirstChildElement("div")->FirstChildElement("div")
@@ -150,6 +149,9 @@ int Xml::parsexml(Curl *curl){
         }
        replies = replies->NextSiblingElement("div");
     }
+    stop = 0;
+    free(htmlbuf);
+    htmlbuf = NULL;
     return 0;
 }
 
